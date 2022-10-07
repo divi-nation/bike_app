@@ -1,0 +1,20 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.line{
+    width: 20%;
+    height: 10px;
+    background: black;
+    transition: 2s ease;
+}
+
+.line.active{
+    width: 90%;
+}

@@ -1,0 +1,19 @@
+.bg{
+    background: white;
+    color: rgb(0, 0, 0);
+}
+
+.white{
+    background: white;
+    color: rgb(0, 32, 15);
+}
+
+.darkItem{
+    background: linear-gradient( rgb(0, 61, 61), rgb(0, 46, 24));
+    color: white;
+
+}
+
+.darkColor{
+     color: rgb(0, 46, 24);
+}

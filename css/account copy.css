@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+}
+
+.phone{
+    width: 100vw;
+    height: 100vh;
+     background: linear-gradient(300deg, rgb(170, 255, 136), white, rgb(255, 255, 255));
+}
+
+.topNavigation{
+    background: lime;
+    height: 75px;
+    background: linear-gradient(75deg, lime, green, rgb(0, 73, 0));
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    color: white;
+ }
+
+ .gIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    color: rgb(0, 116, 6);
+
+ }
+
+ .backIcon{
+      display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 30px;
+     color: rgb(255, 255, 255);
+ }
+
+ .backIcon i{
+     font-weight: 900;
+ }
+
+ .title{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .title h6{
+     font-size: 20px;
+ }
+
+ .topNavigation .icons{
+     border: 1px solid rgba(255, 255, 255, 0);
+ }
+
+ .middle{
+      width: 100%;
+     height:  calc(100vh - 140px);
+     overflow-y: auto;
+     position: relative;
+     background: linear-gradient(45deg, cyan, rgb(27, 253, 65), rgb(0, 133, 133)) ;
+     border: 1px solid white;
+
+ }
+
+ .item{
+     width: 99%;
+     height: 60px;
+      display: flex;
+      margin-top: 10px;
+
+
+ }
+
+ .icon{
+     height: 60px;
+     width: 70px;
+     border: 1px solid rgba(0, 128, 0, 0.137);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .icon i{
+      color: green;
+ }
+
+ .name{
+     margin-left: 10px;
+     display: flex;
+     align-items: center;
+     color: green;
+     border-bottom: 1px solid rgba(21, 255, 0, 0.226);
+     width: 100%;
+ }
+
+ .item:hover{
+    color: white !important;
+    background: lime;
+    box-shadow: 0 0 2px 1px green;
+}
+
+.item:hover .name{
+    color: white;
+    text-transform: uppercase;
+}
+
+ .name h6{
+     font-size: 20px;
+     font-weight: 400;
+ }
+
+ /* profile*/
+.profile, .edit{
+    overflow: hidden;
+    height:  calc(100vh - 140px);
+    width: 0;
+    transition: .3s ease;
+    background: limegreen;
+}
+ .profile{
+    width: 100%;
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgb(255, 255, 255);
+    margin-top: 75px;
+    z-index: 100;
+ 
+     }
+  .pTop{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+  }
+
+  .pImage{
+      height: 100px;
+      width: 100px;
+      border: 1px solid rgb(182, 182, 182);
+       border-radius: 50%;
+       margin-top: 30px;
+  }
+
+  .bName{
+      font-size: 30px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      display: flex;
+       
+  }
+
+  .bName h6{
+      font-weight: 300;
+  }
+
+  .des{
+      font-size: 20px;
+      color: rgb(0, 139, 0);
+  }
+
+  .fullDes{
+      font-weight: 300;
+      text-align: center;
+      margin-top: 3px;
+  }
+
+  .info{
+      margin-left: 6px;
+  }
+  .element{
+      color: black;
+      margin-top: 45px;
+  }
+  .lable h6{
+      font-size: 20px;
+      font-weight: 300;
+      color: black;
+    }
+  .information{
+    font-size: 14px;
+    color: rgb(0, 46, 24) !important;
+      font-weight: 300;
+      margin-left: 6px;
+    }
+  .editButton{
+      float: right;
+      font-size: 35px;
+      border: 1px solid green;
+      color: green;
+      border-radius: 10px;
+      margin: 7px;
+      padding: 10px;
+  }
+  .edit{
+      height: 0;
+  }
+  .edit.active{
+    width: 100%;
+    height:  calc(100vh - 140px);
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+     margin-top: 75px;
+    z-index: 200;
+   }
+
+  .edit input{
+      border-radius: 10px;
+      height: 40px;
+      border: 1px solid white;
+       margin-left: -7px;
+       background: rgba(0, 70, 41, 0.384);
+       color: black;
+       padding-left: 7px;
+       background: rgba(0, 58, 50, 0.89);
+       color: rgb(255, 255, 255);
+
+    }
+  .edit textarea{
+      height: 150px;
+      width: 80%;
+      background: rgba(0, 58, 50, 0.89);
+       color: rgb(255, 255, 255);
+
+  }
+
+  .edit .pImage{
+      display: flex;
+      align-items: center;
+      justify-content: center;      
+      color: white;
+   }
+
+  .edit .pImage input{
+      opacity: 0;
+  }
+
+  .submit{
+      width: 100%;
+      display: flex;
+      margin-top: 50px;
+      justify-content: center;
+      margin-bottom: 15px;
+  }
+
+  .btn{
+      border: 1px solid rgb(92, 0, 0);
+      font-size: 30px;
+      padding: 15px;
+      margin-left: 10px;
+      color: rgb(0, 83, 65);
+    
+     
+
+  }
+
+  .btn:first-child{
+      background: rgb(0, 70, 58);
+      border: none;
+      color: rgb(0, 83, 65);
+      margin-left: -0px;
+  }  

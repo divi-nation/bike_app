@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid green;
+}
+
+.navigation{
+    height: 150px;
+    width: 100%;
+    border: 1px solid rgb(0, 87, 0);
+    background: green;
+    position: relative;
+}
+
+.appName{
+    display: flex;
+}
+.text{
+    margin-top: 20px;
+}
+.text h6{
+    font-size: 25px;
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: -1px;
+    font-weight: 500;
+}
+
+.menu{
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+     align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.menuItem{
+    margin-left: 50px;
+    font-size: 22px;
+    color: white;
+}
+
+ .firstChild{
+     position: relative;
+ }
+
+ .underline{
+     width: 90px;
+     position: absolute;
+     height: 4px;
+     background: white;
+     bottom: -22px;
+     margin-left: -17px;
+ }
+
+ .chats{
+      height: calc(100vh - 150px);
+     overflow-y: auto;
+ }
+
+ .chat{
+     display: grid;
+     grid-template-columns: 2fr 8fr;
+      margin-top: 5px;
+
+ }
+
+ .profilePicture{
+     height: 60px;
+     width: 60px;
+      border-radius: 50%;
+     background-image: url(../images/pexels-ron-lach-9785004.jpg);
+     background-size: cover;
+     background-position: center;
+ }
+
+ .name{
+     font-size: 25px;
+     margin-left: 6px;
+ }
+
+ p{
+     margin-top: 10px;
+ }

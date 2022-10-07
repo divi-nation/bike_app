@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.logo{
+    width: 100px;
+    height: 100px;
+    background: url('../images/photo_2022-04-21_10-42-19-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.center{
+    display: flex;
+    position: relative;
+     flex-direction: column;
+ }
+
+ 
+
+ .box1{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     height: 400px;
+     transition: .7s ease;
+     overflow: hidden;
+     transition-delay: 3s;
+ }
+
+ .box1.active{
+     width: 0%;
+ }
+
+
+ .box2{
+     position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 400px;
+    transition: .7s ease;
+    overflow: hidden;
+    transition-delay: 3s;
+  
+    
+
+}
+
+.lastChild{
+    margin-top: 35px;
+}
+
+.box2.active{
+    width: 100%;
+    transition: 0.7s ease;
+    transition-delay: 3s;
+}
+
+.box2.active2{
+    transition-delay: 3s;
+    
+    width: 0%;
+}
+
+ 
+
+
+.box3{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 400px;
+    transition: .7s ease;
+    overflow: hidden;
+    transition-delay: 3s;
+ 
+    
+
+}
+
+
+
+.box3.active{
+     position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 400px;
+    transition: .7s ease;
+    overflow: hidden;
+    transition-delay: 3s;
+  
+    
+
+}
+
+.box1{
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+   
+}
+
+.bHeader{
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    transition: .7s ease;
+    transition-delay: 2.8s;
+
+ }
+
+.form{
+     margin-left: 3%;
+ }
+
+input{
+    margin-top: 20px;
+}
+
+.form1 .lastChild{
+    padding-top: 35px;
+    padding-bottom: 20px;
+    
+}
+ 
+
+.button{
+ }
+
+.none{
+    display: flex;
+    transition: .3s ease;
+    height: 40px;
+}
+
+.none.active{
+    height: 0px;
+    overflow: hidden;
+}
+
+.yh{
+    height: 0px;
+    overflow: hidden;
+    transition: .3s ease;
+ }
+
+.yh input{
+    color: rgb(189, 189, 189);
+    font-size: 15px;
+}
+
+.yh.active{
+    height: 40px;
+    overflow: visible;
+}
+
+
+
+
+
+.box2{
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+   
+}
+
+
+ 
+
+ 
+
+
+
+
+
+.box3{
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+   
+}
+
+.submit{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -7px;
+}
+
+.submit input{
+
+    padding-top: 7px;
+    background: linear-gradient(270deg, rgba(44, 150, 18, 0.726),rgba(14, 71, 0, 0.726), rgba(172, 255, 47, 0.308));
+    width: 60%;
+    border: none;
+    box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.459);
+    transition: .6s ease;
+
+}
+
+
+.submit input:hover{
+
+    padding-top: 7px;
+    background: linear-gradient(270deg, rgba(31, 126, 8, 0.726),rgba(11, 49, 1, 0.726), rgba(140, 216, 26, 0.308));
+    width: 60%;
+    border: none;
+    box-shadow: 0 0 3px 2px rgba(75, 75, 75, 0.459);
+
+}
+
+.submit{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box1 .bHeader.active{
+    opacity: 0;
+}

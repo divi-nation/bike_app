@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+     position: relative;
+     overflow: hidden;
+     background: linear-gradient(45deg, cyan, rgb(27, 253, 65), rgb(0, 133, 133)) ;
+
+}
+
+.topBar{
+    height: 70px;
+    width: 100%;
+     background: linear-gradient(75deg, lime, green, rgb(0, 73, 0));
+    display: grid;
+    grid-template-columns: 2fr 6fr 3fr;
+
+}
+
+.backIcon, .shopName, .visitShop{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    overflow-x: auto;
+}
+
+.visit{
+    font-size: 13px;
+     background: rgba(0, 27, 19, 0.281);
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    box-shadow: 0 0 7px 2px rgba(0, 16, 17, 0.747);
+}
+
+.middle{
+    width: 100%;
+    height: calc(100vh - 145px);
+     overflow-y: auto;
+    display: grid;
+    grid-template-rows: 1fr 5fr 2fr;
+}
+
+
+
+.itemName, .image, .description{
+ }
+
+.itemName h4{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: rgb(0, 46, 0);
+}
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+      
+}
+
+.image img{
+    width: 90%;
+    height: 95%;
+    margin-top: -10px;
+}
+.description{
+
+    display: grid;
+    grid-template-rows: 2fr 3fr 1fr;
+
+
+}
+
+.change{
+    position: relative;
+    
+}
+
+.next, .prev{
+    position: absolute;
+    height: 100%;
+    width: 100px;
+    background: green;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    box-shadow: 0 0 3px 1px rgba(6, 71, 0, 0.822);
+    border-radius: 4px;
+
+}
+
+.next{
+    right: 4px;
+}
+
+.prev{
+    left: 4px;
+}
+
+.price{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    color: green;
+    font-size: 30px;
+}
+
+.desButton{
+    width: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.dBtn{
+    width: 170px;
+    background: green;
+    height: 100%;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 3px 1px rgba(0, 39, 0, 0.822);
+}
+
+.descriptionPopUp{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .3s;
+    transition-delay: .2s;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.719);
+    padding: 15px;
+    overflow-y: auto;
+
+}
+
+.descriptionPopUp.active{
+   
+    height: 450px;
+     background: linear-gradient(rgba(255, 255, 255, 0.747), rgba(255, 255, 255, 0.884), white);
+     z-index: 5;
+}
+
+
+.descriptionDeactivate{
+    height: 0;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 4;
+    transition: .1s ease;
+    transition-delay: .3s ;
+
+
+  
+}
+
+
+.descriptionDeactivate.active{
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.363);
+   
+
+}
+
+.descriptionPopUp p{
+    color: rgb(46, 46, 46);
+}
+
+
+
+

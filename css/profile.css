@@ -1,0 +1,19 @@
+.label{
+    margin-left: 10px;
+}
+
+.data h6{
+    color: black;
+    font-weight: 200;
+    margin-top: 10px;
+
+}
+
+.last{
+    margin-bottom: 100px;
+}
+
+.data input{
+    font-size: 13px;
+    width: 240px;
+}

@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+
+.container{
+     background: linear-gradient(45deg, cyan, rgb(27, 253, 65), rgb(0, 133, 133)) ;
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    overflow-y: auto;
+  
+}
+
+.pTopBar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    font-size: 20px;
+    position: relative;
+}
+
+.pBackIcon{
+    position: absolute;
+     height: 25px;
+    width: 40px;
+    left: 35px;
+    background: url('../icons/back.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+input{
+    color: #004749;
+     border: none;
+     border-bottom: 1px solid #004749;
+    height: 50px;
+    outline: none;
+    padding-left: 5px;
+    font-size: 20px;
+    border-radius: 2px;
+}
+
+form{
+    margin-left: 40px;
+    color: rgb(53, 53, 53);
+
+     
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+     margin-top: 30px;
+ 
+}
+
+.title input{
+    width: 90%;
+}
+.fCover{
+    display: flex;
+ }
+
+ .pImages{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+      font-size: 20px;
+     margin-top: 50px;
+     
+ }
+ 
+
+ .pImages input{
+     opacity: 0;
+     z-index: 300;
+     width: 100%;
+      
+ }
+
+.fake{
+    width: 100px;
+    height: 60px;
+    overflow: hidden;
+    border: 1px solid #004749;
+    
+    border-radius: 20px;
+    margin-top: 20px;
+    position: relative;
+    color: white;
+ }
+
+.fake i{
+    
+    z-index: 1;
+    color: #004749;
+    font-size: 20px;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+}
+
+
+
+.fake:last-child{
+    margin-left: 40px;
+}
+
+.description{
+    margin-top: 40px;
+ }
+
+ .description input{
+     height: 180px;
+     padding-bottom: 110px;
+     width: 90%;
+ }
+
+ .price{
+     margin-top: 40px;
+     
+ }
+
+ .price input{
+     width: 170px;
+ }
+
+ .numberOfViews{
+     margin-top: 50px;
+     display: block;
+     grid-template-columns: 6fr 3fr;
+      align-items: center;
+     justify-content: center;
+     width: 95%;
+     color: rgb(53, 53, 53);
+     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.144);
+      padding: 20px;
+      padding-bottom: 30px;
+      border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+
+ }
+
+ .numberOfViews input{
+     width: 170px;
+     margin-top: 20px;
+ }
+
+ .numberOfViews h6{
+     font-size: 20px;
+     margin-bottom: 10px;
+ }
+
+
+ .availability{
+     margin-top: 40px;
+     box-shadow: 0 0 5px 1px black;
+     width: 95%;
+     font-size: 25px;
+     padding: 20px;
+     position: relative;
+      color: white;
+     color: rgb(53, 53, 53);
+     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.144);
+        border-top-right-radius: 30px;
+      border-bottom-left-radius: 30px;
+
+ }
+
+ .box{
+  
+     margin-left: 15px;
+     display: none;
+
+}
+ .availability input{
+    width: 170px;
+
+
+ }
+ .location{
+     position: relative;
+     color: white;
+ }
+
+ .first, .second{
+     background: rgba(0, 255, 55, 0.767);
+     cursor: pointer;
+     margin-top: 20px;
+     border-radius: 10px;
+color: white !important;
+     height: 50px;
+     width: 50%;
+     font-size: 20px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .first.addActive, .second.addActive{
+     display: none;
+ }
+ 
+
+
+ .nationInput, .regionInput{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 0;
+    overflow: hidden;
+    transition: .5s ease;
+    border-radius: none;
+ 
+    
+}
+
+ .nationInput.addActive, .regionInput.addActive{
+     
+     width: 100%;
+
+ }
+ .contact{
+    margin-bottom: 90px;
+ }
+
+ 
+
+ 
+ .submit{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 30px;
+     margin-bottom: 30px;
+     position: fixed;
+     bottom: -30px;
+     left: 0;
+     height: 60px;
+     
+ }
+
+ .submit input{
+    height: 100%;
+     width: 100%;
+    box-shadow: 0 0 3px 2px ;
+
+  }

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/homepage.css">
+     <!-- JavaScript Bundle with Popper -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="sidePanel">
+            
+        </div>
+        <div class="closing" onclick="toggle_items('.closing'); toggle_items('.sidePanel')">
+                
+        </div>
+
+
+        <div class="search">
+            <div class="sTopBar" onclick="addActive('.sTopPanel')">
+                <div class="backIcon" onclick="toggle_items('.search')">
+                 </div>
+                <input type="text" placeholder="Search" onclick="addActive('.sTopBar'); addActive('.categories'); addActive('.recent')">
+            </div>
+
+            <div class="recent">
+                <h6>Recent</h6>
+                <p>See All</p>
+            </div>
+             <div class="categories">
+                <div class="c One">Top</div>
+                <div class="c Two">Users</div>
+                <div class="c Three">Products</div>
+                <div class="c Four">Posts</div>
+                <div class="c Five">Discounts</div>
+
+            </div>
+
+         </div>
+
+        <div class="topBar">
+            <div class="menuButton" onclick="toggle_items('.sidePanel'); toggle_items('.closing')">
+                <div class="button">
+                    <i class="bi bi-grid-fill" style="font-size: 40px; color: white;"></i>
+                </div>
+
+            </div>
+            <div class="businessName">
+                <h6>BUSINESS NAME</h6>
+
+            </div>
+
+            <div class="profileIcon">
+                <div class="button" style="font-size: 40px; color: white;">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="center">
+            <div class="recentPost">
+                <div class="post">
+                    <div class="view">
+                        <div class="vIcon">
+                            <i class="bi bi-eye-fill"></i>
+
+                        </div>
+
+                        <div class="vNumber">
+                            <h6>356</h6>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="post pTwo">
+                    <div class="view">
+                        <div class="vIcon">
+                            <i class="bi bi-eye-fill"></i>
+
+                        </div>
+
+                        <div class="vNumber">
+                            <h6>356</h6>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="post pThree">
+                    <div class="view">
+                        <div class="vIcon">
+                            <i class="bi bi-eye-fill"></i>
+                        </div>
+
+                        <div class="vNumber">
+                            <h6>356</h6>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="space">
+                    
+                </div>
+
+
+            </div>
+
+            <div class="bikeInfo">
+
+                <div class="info"> 
+                    <div class="edge">
+                        <div class="outer">
+                            <div class="inner">
+                                <div id="number">
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                            <defs>
+                               <linearGradient id="GradientColor">
+                                  <stop offset="0%" stop-color="lime" />
+                                  <stop offset="100%" stop-color="cyan" />
+                               </linearGradient>
+                            </defs>
+                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                    </svg>
+                    </div>
+
+
+                    <div class="barsText">
+                        <h4>BARS</h4>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <div class="functionalities">
+                <div class="box">
+                    <div class="icon">
+                        <i class="bi bi-binoculars-fill"></i>
+
+                    </div>
+                    <div class="fText">
+                        <h6>Bike</h6>
+                        <p>Through</p>
+                    </div>
+
+                </div>
+
+                <div class="box" onclick='location.href="post.html"'>
+                    <div class="icon">
+
+                    </div>
+                    <div class="fText">
+                        <h6>Post</h6>
+                        <p></p>
+                    </div>
+
+                </div>
+
+                <div class="box" onclick="toggle_items('.search')">
+                    <div class="icon">
+                        <i class="bi bi-search"></i>
+
+                    </div>
+                    <div class="fText">
+                        <h6 style="font-size: 21px;;">Search</h6>
+                        <p>Product</p>
+                    </div>
+
+                </div>
+              
+            </div>
+        </div>
+ 
+
+        </div>
+
+        <div class="bottomNavigation">
+            <div class="nIcon">
+                <i class="bi bi-house active"></i>
+            </div>
+            <div class="nIcon">
+                <i class="bi bi-bell"></i>
+
+            </div>
+            <div class="nIcon">
+                <div class="addButton">
+                    <i class="bi bi-plus"></i>
+                </div>
+            </div>
+            <div class="nIcon">
+                <i class="bi bi-gear"></i>
+            </div>
+            <div class="nIcon">
+                <i class="bi bi-person-fill"></i>
+            </div>
+
+         
+        
+        </div>
+
+    </div>
+
+
+    <script>
+        let number = document.getElementById("number");
+        let counter = 0;
+
+        setInterval(() => {
+            if(counter == 65){
+                clearInterval();
+            }
+            else{
+
+            counter += 1;
+            number.innerHTML = counter ;
+                
+            }
+        }, 30);  
+
+        function toggle_items(item_name){
+            element = document.querySelector(item_name);
+            element.classList.toggle("active")
+        }
+
+        function addActive(item_name){
+            element = document.querySelector(item_name);
+            element.classList.add("addActive")
+        }
+
+    </script>
+
+    
+</body>
+</html>
