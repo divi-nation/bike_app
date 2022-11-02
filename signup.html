@@ -3,8 +3,7 @@
     <head>
         <title>Bike SignUp</title>
        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-       <link rel="stylesheet" href="css/universal.css">
-       <link rel="stylesheet" href="css/signup.css">
+        <link rel="stylesheet" href="css/signup.css">
         <meta name="viewport" content="width=device-width, intial-scale=1.0>"
         
     </head>
@@ -16,6 +15,12 @@
 
     <body>
         <div class="container">
+            <div class="logo cen">
+                <img src="images/photo_2022-04-21_10-42-19-removebg-preview.png">
+            </div>
+            <div class="abstract"></div>
+            <div class="abstract_two"></div>
+
 
             <div class="center">
                 <form action="php/sign_up.php" method="post">
@@ -35,18 +40,17 @@
 
                     <div class="box1">
                     <div class="bHeader">
-                            <h5>Personal Information</h5>
-                        </div>
+                         </div>
                             <div class="form" >
-                                <input type="text" placeholder="First Name" name="first_name">
-                                <input type="text" placeholder="Last Name" name="last_name">
-                                <input class="lastChild" type="email" placeholder="Email" name="email">
+                                <input type="text" placeholder="First Name" name="first_name" required>
+                                <input type="text" placeholder="Last Name" name="last_name" required>
+                                <input class="lastChild" type="email" placeholder="Email" name="email" required>
 
                                 <div class="none">
                                     <input onclick="toggle_items('.none'); toggle_items('.yh')"   type="text" placeholder="Date of birth" >
                                 </div>
                                 <div class="yh">
-                                    <input type="date"  name="date_of_birth"> 
+                                    <input type="date"  name="date_of_birth" required> 
                                 </div>
 
 
@@ -63,20 +67,19 @@
                     </div> 
                     <div class="box2">
                         <div class="bHeader">
-                            <h5>Bussiness Information</h5>
-                        </div>
+                         </div>
                         <div class="form">
-                            <input type="text" placeholder="Bussiness Name" name="business_name">
-                            <input type="text" placeholder="Country" name="country">
+                            <input type="text" placeholder="Bussiness Name" name="business_name" required>
+                            <input type="text" placeholder="Country" name="country" required>
 
-                            <input type="text" placeholder="Phone" name="phone">
-                            <input type="password" placeholder="Password" name="password">
+                            <input type="text" placeholder="Phone" name="phone" required>
+                            <input type="password" placeholder="Password" name="password" required>
     
                         </div>
 
 
 
-                        <div class="submit" onclick="location.href='homepage.php'">
+                        <div class="submit">
                             <input type="submit" value="Sign Up">
                         </div>
 

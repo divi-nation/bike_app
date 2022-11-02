@@ -1,9 +1,6 @@
 <?php session_start();
  
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
+ 
 if (!isset($_SESSION['id']) || $_SESSION['id'] == null){
     header("Location: index.html");
 }
@@ -54,6 +51,8 @@ else{
         $count = 1;
     }
 
+
+
  
     if($conn){
         //fetching current user information
@@ -61,12 +60,39 @@ else{
         $result = mysqli_query($conn, $query) or die ("Unsuccessful Query");
         $row = mysqli_fetch_array($result);
         $bars = $row['bars'];
+        $country = $row['country'];
+
+
+        //counting the number of posts in the current user's country
+        $query = "select * from post_test where country = '$country'";
+        $count_results = mysqli_query($conn, $query);
+        $count_row = mysqli_fetch_array($count_results);
+        $posts_in_country = 0;
+
+        if ($result->num_rows > 0){
+            while ($count_row = $count_results-> fetch_assoc()){
+                $posts_in_country = $posts_in_country + 1;
+              
+            }
+        }
+ 
+
+        if ($posts_in_country > 5){
+            $post_query    = "select * from post_test where id=$count and country = '$country'";
+            $post_result   = mysqli_query($conn, $post_query) or die ("Unsuccessful Query");
+            $post_row      = mysqli_fetch_array($post_result);
+            
+
+        }
+        else{
+            $post_query    = "select * from post_test where id=$count";
+            $post_result   = mysqli_query($conn, $post_query) or die ("Unsuccessful Query");
+            $post_row      = mysqli_fetch_array($post_result);
+        }
+             
+
 
         //fetching current post information
-        $post_query    = "select * from post_test where id=$count ";
-        $post_result   = mysqli_query($conn, $post_query) or die ("Unsuccessful Query");
-        $post_row      = mysqli_fetch_array($post_result);
-        
         $poster_id     = $post_row['user_id'];
         $post_contact = $post_row['contact'];
 
@@ -98,7 +124,7 @@ else{
 
 
 
-        $poster_query = "select business_name, phone from users where id = $poster_id"; 
+        $poster_query = "select business_name, phone from users where id = '$poster_id'"; 
         $result_p = mysqli_query($conn, $poster_query) or die ("Unsuccessful Query");
         $row_p = mysqli_fetch_array($result_p);
 
@@ -107,7 +133,6 @@ else{
 
     }
     else{
-
     }
    
 

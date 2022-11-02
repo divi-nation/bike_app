@@ -1,27 +1,25 @@
 <?php
 
 ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 
 
 
 
-   $business_name = $_POST['business_name'];
-   $email = $_POST['email'];
-   $password = $_POST['password'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
    $conn = new mysqli("localhost", "root", "", "bike_app");
 
-   $query = "select * from users where business_name = '$business_name' or email = '$business_name'";
+   $query = "select * from users where email = '$email' and password = '$password'";
    $result = mysqli_query($conn, $query) or die ("Unsuccessful Query");
    $row = mysqli_fetch_array($result);
 
    $user_password = $row['password'];
 
-   echo $user_password;
-
+ 
    if($user_password == $password){
     echo "<script>alert('login sucessful')</script>";
     session_start();
@@ -35,8 +33,8 @@ error_reporting(E_ALL);
    }
 
    else{
-    echo "<script>alert('login not sucessful, try again')</script>";
-    header("refresh:1; url=../index.html");
+    echo "<script>alert('Something Went wrong please try agein')</script>";
+    header("refresh:1; url=../index.php");
 
    }
    

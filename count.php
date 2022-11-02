@@ -18,7 +18,7 @@
   $row = mysqli_fetch_array($result);
 
 //incrementing bars
-    $bars   = $row['bars'] + 1;
+    $bars   = $row['bars'] + 3;
     $query  = "update users set `bars` = '$bars' where id = $user_id";
     $result = mysqli_query($conn, $query) or die ("Unsuccessful Query");
 

@@ -1,8 +1,8 @@
 <?php 
 
 ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
  
     $first_name    = $_POST['first_name'];
@@ -26,51 +26,63 @@ error_reporting(E_ALL);
     {
          //checking if business_name already exists
          $query = "select * from users where business_name = '$business_name'";
-         $execute = mysqli_query($conn, $query) or die ("unsuccessful query");
+         $result = mysqli_query($conn, $query) or die ("unsuccessful query");
+         $row = mysqli_fetch_array($result);
+          $business = $row['business_name'];
 
-
-
-         $sql = "INSERT INTO `users` (`first_name`, `last_name`, `date_of_birth`, `email`, `business_name`, `country`, `phone`, `password`) values ('$first_name', '$last_name', '$date_of_birth', '$email', '$business_name', '$country', '$phone', '$password')";
-         $query = mysqli_query($conn, $sql);
-         $result = $query->get_result()->fetch_assoc();
-         $b_name = $result['business_name'];
-
-         if ($business != null){
+         if(isset($business)){
             echo "<script>alert('The Business Name you chose already exist, please choose another one');</script>";
-            header("refresh: 1")
+            header("refresh: 4, url=../signup.html");
+
          }
+         else{
+            $sql = "INSERT INTO `users` (`first_name`, `last_name`, `date_of_birth`, `email`, `business_name`, `country`, `phone`, `password`) values ('$first_name', '$last_name', '$date_of_birth', '$email', '$business_name', '$country', '$phone', '$password')";
+            $query = mysqli_query($conn, $sql);
+            // $result = $query->get_result()->fetch_assoc();
+            // $b_name = $result['business_name'];
+
+
+            if($query){
+                echo "<script type='text/javascript'>alert('REGISTRATION SUCESSFULL')</script>";
+
+                $sql = 'select id from users where phone = ?';
+                $sql = $conn->prepare($sql);
+                $sql->bind_param('s', $phone);
+                $sql->execute();
+
+                $result = $sql->get_result()->fetch_assoc();
+                $id = $result['id'];
+
+
+                $stmt = $conn->prepare("insert into accounts (`user_id`, `business_name`) values (?,?)");
+                $stmt->bind_param("is", $id, $business_name);
+                $stmt->execute();
+
+                
+
+
+                header("refresh:1; url=../index.html");
+
+            }
+
+            else{
+                echo "error occured";
+            }
+        
+           
+
+
+         }
+
+
+
+ 
  
 
 
   
 
 
-    if($query){
-        echo "<script type='text/javascript'>alert('REGISTRATION SUCESSFULL')</script>";
-
-        $sql = 'select id from users where phone = ?';
-        $sql = $conn->prepare($sql);
-        $sql->bind_param('s', $phone);
-        $sql->execute();
-
-        $result = $sql->get_result()->fetch_assoc();
-        $id = $result['id'];
-
-
-        $stmt = $conn->prepare("insert into accounts (`user_id`, `business_name`) values (?,?)");
-        $stmt->bind_param("is", $id, $business_name);
-        $stmt->execute();
-
-        
-
-
-        header("refresh:1; url=../index.html");
-
-    }
-
-    else{
-        echo "error occured";
-    }
 
     }
 ?>

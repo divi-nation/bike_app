@@ -1,0 +1,64 @@
+form{
+     height: 100vh;
+    overflow: auto;
+    padding-right: 30px;
+      
+}
+.submit input{
+    margin-bottom: 30px;
+     
+}
+ 
+.noborder input{
+    border: none;
+}
+.logo i{
+    font-size: 40px;
+    color: rgb(14, 75, 14);
+}
+
+form .logo{
+    left: 1px;
+    
+}
+.twogrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+    width: 100%;
+
+ }
+ .currency{
+     display: flex;
+    flex-direction: column;
+    width: 80%;
+ }
+ .price input{
+    width: 100%;
+    background: transparent;
+    height:43px;
+    border: 1px solid lime;
+    padding-left: 3px;
+    outline: none;
+
+ }
+ .currency select{
+    width: 100%;
+    background: transparent;
+    height:43px;
+    border: 1px solid lime;
+    padding-left: 3px;
+    outline: none;
+ }
+
+ .form_item select{
+    width: 100%;
+    background: transparent;
+    height:43px;
+    border: 1px solid lime;
+    padding-left: 3px;
+    outline: none;
+
+ }
+
+ 

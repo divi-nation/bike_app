@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="css/bottomNavigation.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/topbar.css">
-    <link rel="stylesheet" href="css/universalBackgrouund.css">
-
+ 
 </head>
 <body>
 <div class="preloader">
@@ -43,9 +42,7 @@
 
         <div class="middle bg">
 
-            <div class="itemName">
-                <h4><?php echo $post_row['post_title']; ?></h4>
-            </div>
+        
             <div class="image">
                 <img class="image1" src="php/images/<?php echo $post_row['post_image_1']?>">
                 <img class="image2 active" src="php/images/<?php echo $post_row['post_image_2']?>">
@@ -53,6 +50,9 @@
                 <div class="switch" onclick="toggle_items('.image2')">
                 <i class="bi bi-arrow-down-up"></i>
             </div>
+            </div>
+            <div class="itemName">
+                <h4><?php echo $post_row['post_title']; ?></h4>
             </div>
             <div class="description">
                 <div class="change">
@@ -65,7 +65,9 @@
                 </div>
 
                 <div class="price">
-                    <p>GHC <span><?php echo $post_row['post_price']; ?></span></p>
+                     <p><?php echo $post_row['currency']?> <span><?php echo $post_row['post_price']; ?></span></p>
+
+                    <h6><?php echo $post_row['region']?></h6>
                 </div>
 
                 <div class="desButton">
@@ -90,10 +92,8 @@
                     <h5>Posted By: <?php echo $row_p['business_name']; ?></h5>
                     <h5>Available in: <?php echo $post_row['region']; ?></h5>
                     <h5>For more information, contact: <?php echo $post_row['contact']; ?></h5>
-                    <span onclick="location.href='php/intrested_handler.php'">
-                    <h6>I'm Intrested</h6>
-
-
+                    <span>
+                        <h6>CHAT</h6>
                     </span>
                  </div>
  
@@ -142,10 +142,17 @@
     </script>
     <script>
 
-window.onload = () => {
+    window.onload = () => {
             
             element = document.querySelector(".preloader");
             element.classList.add("active");
+             
+           
+             setTimeout(() => {
+                element2 = document.querySelector(".next");
+                element2.classList.add("active");
+            }, 1000);
+            
 
            
 

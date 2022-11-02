@@ -38,7 +38,7 @@
                 <div class="visitShop">
 
                     <div class="visit">
-                        <p>Visit <br>Shop</p>
+                        <p>CHAT</p>
                     </div>
 
                 </div>

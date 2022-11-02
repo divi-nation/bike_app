@@ -19,92 +19,44 @@
 
 </head>
 <body>
-
-    <div class="loader">
-        <div class="logo"></div>
-        <div class="fill"></div>
-
-    </div>
+  
+ 
 
     <div class="container bg">
 
-        <div class="sidePanel">
-            
-        </div>
-        <div class="closing" onclick="toggle_items('.closing'); toggle_items('.sidePanel')">
-                
-        </div>
+        
 
-
-        <div class="search darkItem">
-            <div class="sTopBar addActive" onclick="addActive('.sTopPanel')">
-                <div class="backIcon" onclick="toggle_items('.search')">
-                 </div>
-                <input type="text" placeholder="Search" onclick="addActive('.sTopBar'); addActive('.categories'); addActive('.recent')">
-            </div>
-
-            <div class="recent">
-                <h6>Recent</h6>
-                <p>See All</p>
-            </div>
-             <div class="categories">
-                <div class="c One">Top</div>
-                <div class="c Two">Users</div>
-                <div class="c Three">Products</div>
-                <div class="c Four">Posts</div>
-                <div class="c Five">Discounts</div>
-
-            </div>
-
-         </div>
-
+ 
         <div class="topBar">
             <div class="menuButton" onclick="toggle_items('.sidePanel'); toggle_items('.closing')">
-                <div class="button">
-                     <i class="bi bi-gear" style="font-size: 25px; color: white;"></i>
-
-                </div>
-
             </div>
             <div class="businessName darkColor">
                 <h6>BIKE</h6>
-
             </div>
+            <div class="barz">
+                <div class="barsContainer">
+                    <div class="barsTexxt">
+                        <h5>BARS :</h5>
+                    </div>
+                     <div class="numberOfBars">
+                        <h6 ><?php echo $row_c['bars']; ?></h6>
+                    </div>
 
-            <div class="profileIcon" style="opacity: 0;">
-                <div class="button" style="font-size: 40px; color: white;">
-                    <i class="bi bi-person-circle"></i>
+                    
+
                 </div>
 
 
             </div>
-        </div>
+
+
+         </div>
 
 
         <div class="center">
 
-            <div class="barz">
-                <div class="barsContainer">
-                    <div class="actualBars">
-                        <div class="horbar tall darkItem"></div>
-                        <div class="horbar middle darkItem"></div>
-                        <div class="horbar short darkItem"></div>
-
-                    </div>
-                    <div class="numberOfBars">
-                        <h6 style="color: black;"><?php echo $row['bars']; ?></h6>
-
-                    </div>
-
-                    <div class="barsTexxt">
-                        <p>BARS</p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
+         
+            <div class="slide"></div>
           
             <div class="functionalities">
                 <div class="box darkItem" onclick="location.href='bikeThrough.php'";>
@@ -115,14 +67,14 @@
                         <h6>Bike</h6>
                         <h6 class="small">Through</h6>
                         <div class="centerText">
-                            <p>To earn bars for free!</p>
+                            <p>To earn more <br>Bars!</p>
 
                         </div>
                     </div>
 
                 </div>
 
-                <div class="box darkItem" onclick='location.href="post.html"'>
+                <div class="box darkItem" onclick='location.href="post.php"'>
                     <div class="icon">
                     <i class="bi bi-arrow-up-circle"></i>
 
@@ -137,7 +89,7 @@
 
                 </div>
 
-                <div class="box darkItem" onclick="toggle_items('.search')">
+                <div class="box darkItem" onclick="location.href='search.php'">
                     <div class="icon">
                         <i class="bi bi-search"></i>
 
@@ -146,12 +98,17 @@
                         <h6>Bike</h6>
                         <h6>Search</h6>
                         <div class="centerText">
-
                             <p>Look up a business</p>
                         </div>
-                    </div>
-
                 </div>
+
+
+            <div class="loader">
+                <div class="logo"></div>
+                <div class="fill"></div>
+
+            </div>
+        </div>
               
             </div>
         </div>
@@ -217,7 +174,7 @@
             element.classList.add("active");
 
 
-}
+        }
 
 
 

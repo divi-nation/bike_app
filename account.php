@@ -1,4 +1,4 @@
-<?php require_once "php/accounts_handler.php"?>
+<?php require_once "php/accounts_handler.php"; require_once "php/session.php"?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/topbar.css">
     <link rel="stylesheet" href="css/universalBackgrouund.css">
+    <link rel="stylesheet" href="css/shopboard.css">
 
 </head>
 <body>
@@ -45,84 +46,145 @@
                         <img src="images/pexels-ron-lach-9785004.jpg">
                     </div>
                     <div class="bName">
-                        <h6><?php echo $row['business_name']?></h6>
+                        <h6><?php echo $row_c['business_name']?></h6>
                     </div>
 
                     <div class="description">
-                        <p><span>DESCRIPTION : <br></span><?php echo $row['business_description']?></p>
+                        <p><span>DESCRIPTION : <br></span><?php echo $row_c['business_description']?></p>
                     </div>
                                         
-                    <div class="con">
+                    <!-- <div class="con">
                         <div class="shopboard darkItem" onclick="location.href='shopboard.php'">
                             <p>My Shopboard</p>
                         </div>
                         
                     </div>
-                   
+                    -->
  
                     <div class="totalPosts">
-                        <p>4 <span>posts</span></p>
+                        <p id="count"><span>posts</span></p> <p class="p"> posts</p>
                     </div>
 
+                    <div class="content">
+                        <?php
+                        //selecting everything posted by current user(posts that are still active) 
+                            $sql = "SELECT * FROM post_test";
+                            $result = mysqli_query($conn, $sql) or die ("Unsuccessful Query");
+                            $row = mysqli_fetch_array($result);
+                            $row_count_s = 0;
+                            $count = 0;
+                            if ($result->num_rows > 0){
+                                while ($row = $result-> fetch_assoc()){
 
-                    <div class="posts">
-                        <div class="element">
-                            <div class="pTitle">
-                                <p>Item Name</p>
-                            </div>
-                            <div class="views darkItem">
-                                <div class="numberOfViews">
-                                    <h6>VIEWS: 10/500</h6>
-                                </div>
+                                    
 
-                                <div class="note">
-                                    <p>will disappear after 500 views</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element">
-                            <div class="pTitle">
-                                <p>Item Name</p>
-                            </div>
-                            <div class="views darkItem">
-                                <div class="numberOfViews">
-                                    <h6>VIEWS: 10/500</h6>
-                                </div>
 
-                                <div class="note">
-                                    <p>will disappear after 500 views</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element">
-                            <div class="pTitle">
-                                <p>Item Name</p>
-                            </div>
-                            <div class="views darkItem">
-                                <div class="numberOfViews">
-                                    <h6>VIEWS: 10/500</h6>
-                                </div>
+                                    if ($row['user_id'] == $user_id){
+                                        $count = $count + 1;
 
-                                <div class="note">
-                                    <p>will disappear after 500 views</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="element">
-                            <div class="pTitle">
-                                <p>Item Name</p>
-                            </div>
-                            <div class="views darkItem">
-                                <div class="numberOfViews">
-                                    <h6>VIEWS: 10/500</h6>
-                                </div>
+                                        $sql_2 = "SELECT * FROM post_test where id = $row_count_s";
+                                        $result_2 = mysqli_query($conn, $sql_2) or die ("Unsuccessful Query");
+                                        $row_2 = mysqli_fetch_array($result_2);
 
-                                <div class="note">
-                                    <p>will disappear after 500 views</p>
-                                </div>
-                            </div>
-                        </div>
+                                        $item_name = $row_2['post_title'];
+                                        $post_view_left = $row_2['post_max_views'];
+                                        $post_image_1 = $row_2['post_image_1'];
+            
+
+
+
+
+                                        echo '
+                                                                        
+                                            <div class="s_element">
+                                            <div class="s_image">
+                                                <img src="php/images/'.$post_image_1.'"/>
+
+                                            </div>
+                                            <div class="s_info">
+                                                <div class="post_title">
+                                                    <h4>'; echo $item_name; echo '</h4>
+                                                </div>
+                                                <div class="views_left">
+                                                    <h6>Views Left : <span>'; echo $post_view_left; echo '</span> </h6>
+                                                </div>
+
+                                            </div>
+                                            </div>'
+                                            ;
+
+                                    }
+
+ 
+                                    $row_count_s++;
+
+                                
+                                }
+                            }
+
+                        ?>
                     </div>
+        
+
+
+                    <!-- <div class="posts">
+                        <div class="element">
+                            <div class="pTitle">
+                                <p>Item Name</p>
+                            </div>
+                            <div class="views darkItem">
+                                <div class="numberOfViews">
+                                    <h6>VIEWS: 10/500</h6>
+                                </div>
+
+                                <div class="note">
+                                    <p>will disappear after 500 views</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="element">
+                            <div class="pTitle">
+                                <p>Item Name</p>
+                            </div>
+                            <div class="views darkItem">
+                                <div class="numberOfViews">
+                                    <h6>VIEWS: 10/500</h6>
+                                </div>
+
+                                <div class="note">
+                                    <p>will disappear after 500 views</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="element">
+                            <div class="pTitle">
+                                <p>Item Name</p>
+                            </div>
+                            <div class="views darkItem">
+                                <div class="numberOfViews">
+                                    <h6>VIEWS: 10/500</h6>
+                                </div>
+
+                                <div class="note">
+                                    <p>will disappear after 500 views</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="element">
+                            <div class="pTitle">
+                                <p>Item Name</p>
+                            </div>
+                            <div class="views darkItem">
+                                <div class="numberOfViews">
+                                    <h6>VIEWS: 10/500</h6>
+                                </div>
+
+                                <div class="note">
+                                    <p>will disappear after 500 views</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
 
 
                     <div class="myPosts"></div>
@@ -156,6 +218,9 @@
         element = document.querySelector(item_name);
         element.classList.toggle("active");
     }
+
+    var count = <?php echo $count ?>;
+    document.getElementById("count").innerHTML = count;
 </script>
     
 

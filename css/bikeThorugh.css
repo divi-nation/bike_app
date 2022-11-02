@@ -82,7 +82,7 @@
     height: calc(100vh - 145px);
      overflow-y: auto;
     display: grid;
-    grid-template-rows: 1fr 5fr 2fr;
+    grid-template-rows: 6fr 1fr 3fr;
 }
 
 
@@ -94,6 +94,7 @@
     justify-content: center;
     font-size: 20px;
     color: #00362b;
+    margin-top: 10px;
 }
 
 .image{
@@ -167,6 +168,10 @@
 
 .next{
     right: 4px;
+    background: grey !important;
+}
+.next.active{
+    background: green !important;
 }
 
 .prev{
@@ -175,10 +180,14 @@
 
 .price{
     display: flex;
+    flex-direction: column;
     align-items: center; 
     justify-content: center;
     font-size: 20px;
     color: rgb(0, 46, 0);
+}
+.price h6{
+    font-weight: 300;
 }
 
 .desButton{
@@ -257,13 +266,12 @@
 }
 
 .descriptionPopUp span{
-     padding: 7px;
-    font-size: 13px;
+     padding: 14px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    background: #00362b;
+     background: #00362b;
     color: white;
     margin-top: 20px;
   }
@@ -271,3 +279,17 @@
 
 
 
+@media (min-width: 600px){
+    .image{
+       
+        height: 300px;
+        width: 300px;
+        position: relative;
+        flex-direction: column;
+        background: white;
+        margin-left: calc(50% - 159px);
+          
+    }
+    
+
+}

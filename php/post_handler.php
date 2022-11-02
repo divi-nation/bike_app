@@ -1,25 +1,26 @@
 <?php require_once "session.php";
 
 
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
-//
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
  
 
    $user_id           = $_SESSION['id'];
    $post_title        = $_POST['post_title'];
    $post_description  = $_POST['post_description'];
+   $currency          = $_POST['currency'];
    $post_price        = $_POST['post_price'];
    $post_max_views    = $_POST['post_max_views'];
    $country           = $_POST ['country'];
    $region            = $_POST ['region'];
    $contact           = $_POST ['contact'];
 
-   if ($post_max_views > $row['bars']) {
+   if ($post_max_views > $row_c['bars']) {
       echo "<script>alert('Max view entered is more that your number of bars, view more items in the BIKE TROUGH section to get more Bars')</script>";
  
-      header("refresh:1; url=../post.html");
+      header("refresh:1; url=../post.php");
 
 
    }
@@ -69,11 +70,11 @@
           $msg = "There was a problem uploading image";
         }
 
+        //uploading post information
+          $stmt = $conn->prepare("insert into post_test (`id`, `user_id`, `post_title`, `post_description`, `currency`, `post_price`, `post_max_views`, `post_image_1`, `post_image_2`, `country`, `region`, `contact`) 
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-           $stmt = $conn->prepare("insert into post_test (`id`, `user_id`, `post_title`, `post_description`, `post_price`, `post_max_views`, `post_image_1`, `post_image_2`, `country`, `region`, `contact`) 
-          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-          $stmt->bind_param("issssssssss", $row_count, $user_id, $post_title, $post_description, $post_price, $post_max_views, $post_image_1, $post_image_2, $country, $region, $contact);
+          $stmt->bind_param("isssssssssss", $row_count, $user_id, $post_title, $post_description, $currency, $post_price, $post_max_views, $post_image_1, $post_image_2, $country, $region, $contact);
     
           $stmt->execute();
           

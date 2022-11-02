@@ -1,0 +1,97 @@
+
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+.search.active{
+    display: block;
+    position: fixed;
+    height: calc(100vh - 75px);
+    top: 0;
+    left: 0;
+    width: 100vw;
+     z-index: 100;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+     
+}
+.search_container{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: url('../images/airpod-iphone-nespresso-gadget.jpg');
+    background-size: cover;
+     border-bottom-left-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: 80%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 0 5px 1px grey;
+   
+ }
+
+ form .self{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+ }
+ .submit{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    right: 0;
+    opacity: 0;
+    z-index: 5;
+ }
+ form i{
+    position: absolute;
+    right: 15%;
+    top: 10px;
+    color: rgb(22, 69, 0);
+    font-size: 25px;
+
+ }
+
+ .back{
+    position: absolute;
+    left: 10px;
+    color: rgb(22, 69, 0);
+    font-size: 25px;
+    top: 10px;
+  }
+
+
+ .remaining_content{
+    height: calc(100vh - 150px);
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+ }
+
+ .search_item{
+   width: 300px;
+   background: white;
+   box-shadow: 1px 1px 5px 1px rgb(220, 220, 220);
+   padding: 10px;
+     color: rgb(31, 45, 31);
+    margin-top: 30px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+  }
+ h6{
+   font-size: 9px;
+ }

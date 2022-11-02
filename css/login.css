@@ -1,5 +1,145 @@
  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    overflow: hidden;
+}
+.logo img{
+    width: 100%;
+    
+}
+.cen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    overflow: hidden;
+    overflow-x: hidden;
+    color: #222;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+form{
+    width: 600px;
+    height: 500px;
+     flex-direction: column;
+    display: flex;
+    align-items:center;
+    z-index: 5;
 
+  }
+.head{
+    width: 100px;
+}
+
+.form_item{
+     width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.form_item input{
+    width: 100%;
+    background: transparent;
+    height:43px;
+    border: 1px solid lime;
+    padding-left: 3px;
+    outline: none;
+ }
+.submit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 13px;
+    margin-top: 40px;
+ }
+
+.submit input{
+    width: 200px;
+    height: 50px;
+    border: none;
+    color: white;
+    background: limegreen;
+    border-radius: 25px;
+    font-size: 17px;
+}
+.link_text{
+    color: rgb(9, 138, 9);
+}
+.remainder{
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+.remainder h6{
+     font-weight: 300;
+}
+.remainder span{
+    color: rgb(9, 138, 9);
+    cursor: pointer;
+}
+.abstract{
+    
+    height: 40vh;
+    width: 40vh;
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    margin-left: -15vh;
+    transform: rotate(45deg);
+    border-radius: 50px;
+    background: linear-gradient(145deg, #fff, limegreen);
+    opacity: .5;
+
+}
+.abstract_two{
+     height: 30vw;
+     width: 30vw;
+    position: absolute;
+    right: -50px;
+    top: -100px;
+
+     
+      transform: rotate(45deg);
+    border-radius: 50px;
+    background: linear-gradient(145deg, lime, limegreen);
+}
+
+@media (max-width: 750px){
+    form{
+        width: 80vw;
+    }
+    .submit input{
+        width: 140px;
+        height: 50px;
+    }
+    .link_text{
+        font-size: 12px;
+        width: 40%;
+    }
+    .abstract_two{
+        height: 200px;
+        width: 200px;
+    }
+}
+
+/*
 
 .logo{
     width: 100px;

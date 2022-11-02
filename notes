@@ -1,0 +1,7 @@
+user country = Ghana
+
+count number of Ghana counrtries in posts
+if result > 100
+    you view only posts in Ghana
+else
+    you view every post

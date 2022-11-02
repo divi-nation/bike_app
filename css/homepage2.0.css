@@ -131,81 +131,65 @@
     background: rgb(255, 255, 255);
      
 }
-
- 
-
-.sTopBar{
+.search_container{
+    position: relative;
     width: 100%;
-    display: grid;
-    grid-template-columns: 0fr 12fr;
-    align-items: center;
-    justify-content: center;
-      margin-top: 20px;
-      transition: .3s ease;
-      margin-left: 5%;
-       
-}
-
-
-.sTopBar.addActive{
-   
-    display: grid;
-    
-    grid-template-columns: 2fr 11fr;
-       
- }
-
- .search .backIcon{
-    height: 60px;
-    width: 60px;
-    background: url('../icons/back.jpg');
-    background-size: 30%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(0, 65, 48, 0.432);
-    border-radius: 50%;
-  }
-
-.sTopBar input{
-    color: rgb(255, 255, 255);
-    padding-left: 8px;
-    background: rgba(0, 65, 48, 0.801);
-     width: 90%;
-    height: 50px;
-    border-radius: 14px;
-    border: none;
-    outline: none;
-  }
-
-
-
-  .categories{
-    color: white;
-    width: 0vw;
+    height: 150px;
+    background: url('../images/airpod-iphone-nespresso-gadget.jpg');
+    background-size: cover;
+     border-bottom-left-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 8px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    cursor: pointer;
-    transition: .4s ease;
-    display: none;
-    
-  }
-  .categories.addActive{
-      color: white;
-      width: 100vw;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 8px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      display: none;
+}
+form{
+    width: 80%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 0 5px 1px grey;
+   
+ }
 
-      
-    }
+ form .self{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+ }
+ .submit{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    right: 0;
+    opacity: 0;
+    z-index: 5;
+ }
+ form i{
+    position: absolute;
+    right: 15%;
+    top: 10px;
+    color: rgb(22, 69, 0);
+    font-size: 25px;
+
+ }
+
+ .back{
+    position: absolute;
+    left: 10px;
+    color: rgb(22, 69, 0);
+    font-size: 25px;
+    top: 10px;
+  }
+
+
+ 
+
+
 
    .c{
        margin-left: 14px;
@@ -219,37 +203,8 @@
 
      }
 
-     .recent{
-         color: white;
-         width: 100vw;
-         height: 45px;
-          display: flex;
-         margin-top: 15px;
-         position: relative;
-         overflow: hidden;
-     }
-     .recent h6{
-         margin-left: 3%;
-         font-size: 16px;
-         cursor: pointer;
+ 
 
-     }
-
-     .recent p{
-         position: absolute;
-         right: 10px;
-         top: 0;
-         color: rgb(0, 44, 24);
-         letter-spacing: -1px;
-         font-size: 14px;
-         font-weight: 200;
-         cursor: pointer;
-
-     }
-
-     .recent.addActive{
-         display: none;
-     }
 
 
 
@@ -270,8 +225,7 @@ body{
     margin-left: 2.5%;
      display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    padding-top: 10px;
-}
+ }
 
 .menuButton{
    position: relative;
@@ -329,6 +283,8 @@ body{
      align-items: center;
      justify-content: center; 
      color: rgb(255, 255, 255);
+     border: 1px solid;
+      
  }
 
  
@@ -340,8 +296,8 @@ body{
       margin-left: -50px;
  }
  .horbar{
-     height: 90%;
-     width: 18px;
+     height: 55%;
+     width: 10px;
      background: linear-gradient(#00e903, green);
       position: absolute;
      bottom: 0;
@@ -349,13 +305,13 @@ body{
  }
 
  .actualBars .middle{
-     height: 60%;
-     margin-left: 50px;
+     height: 30%;
+     margin-left: 30px;
  }
 
  .actualBars .short{
-    height: 28%;
-    margin-left: 100px;
+    height: 15%;
+    margin-left: 60px;
     
 
 }
@@ -368,19 +324,26 @@ body{
  }
 
  .numberOfBars h6{
-     font-weight: 1000;
+     font-weight: 400;
+     font-size: 20px;
+     color: black;
+
  }
- .barsTexxt{
+ .barsTexxt h5{
      display: flex;
       justify-content: center;
- }
+      color: #00372e;
+      font-weight: 800;
+      font-size: 15px;
+  }
 
  .barsContainer{
      width: 160px;
      height: 200px;
-      display: grid;
-     grid-template-rows: 4fr 3fr 2fr;
- }
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
  .recentPost, .bikeInfo{
       display: flex;
      align-items: center;
@@ -441,57 +404,7 @@ body{
       position: relative;
  }
 
- .outer{
-     height: 160px;
-     width: 160px;
-     border-radius: 50%;
-      display: flex;
-     align-items: center;
-     justify-content: center;
-     box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-                -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
- }
-
- .inner{
-     width: 120px;
-     height: 120px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-     box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-                 inset -4px -4px 6px -1px rgba(255,255,255,1),
-                 0.5px 0.5px 0px rgba(0,0,0,0.15),
-                 0px 12px 10px -10px rgba(0,0,0,0.05);
-                 
- }
-
- #number{
-     font-weight: 600;
-     color: rgb(255, 255, 255);
-      padding: 10px;
-     border-radius: 50%;
-     box-shadow: 0 0 23px 2px rgb(0, 255, 13);
-     background: rgba(0, 92, 87, 0.274);
-    
-     
- }
-
- circle{
-     fill: none;
-     stroke: url(#GradientColor);
-     stroke-width: 20px;
-     stroke-dasharray: 472;
-     stroke-dashoffset: 472;
-     animation: anim 2s linear forwards;
-      
- }
-
- svg{
-     position: absolute;
-     top: 0;
-     left: 0;
- }
+ 
  
 
  .bars{
@@ -520,6 +433,7 @@ body{
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
       position: relative;
+      width: 100vw;
  }
 
  .box{
@@ -532,8 +446,7 @@ body{
      grid-template-rows: 1fr 1fr;
      color: white;
      background: linear-gradient( rgb(0, 255, 0),rgba(0, 92, 87, 0.274));
-     box-shadow: 0 4px 6px 2px black;
-     cursor: pointer;
+      cursor: pointer;
  }
 
  .fText{
@@ -581,8 +494,7 @@ body{
     background: linear-gradient(390deg, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 10, 8), rgb(0, 0, 0),rgb(0, 0, 0)) ;
     position: fixed;
     bottom: 0;
-    box-shadow: 0 0 5px 3px;
-    display: grid;
+     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
  }
 
@@ -606,32 +518,7 @@ body{
      font-size: 20px;
  }
 
- .getMore h6{
-     padding: 10px;
-    background: rgba(0, 0, 0, 0.76);
-    border-radius: 17px;
-    box-shadow: 0 0 6px 4px rgba(2, 58, 58, 0.452);
-
-
- }
-
- .addButton{
-     height: 70px;
-     width: 70px;
-      border-radius: 50%;
-     margin-top: -30px;
-     background: linear-gradient(234deg, rgb(0, 255, 0), cyan, rgb(156, 156, 240));
-     box-shadow: 0 0 4px 3px black;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     color: black;
-     font-size: 40px;
-     font-weight: 800;
-     z-index: 110;
-     display: none;
-  }
-
+  
   .icon{
       display: flex;
       align-items: center;

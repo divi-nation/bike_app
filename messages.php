@@ -79,7 +79,7 @@
 
                             echo '
 
-                            <div class="chat">
+                            <div class=>
                                 <div class="left">
                                     <div class="item_image">
                                         <img src="php/images/'.$int_item_image.'">
