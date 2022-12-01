@@ -21,15 +21,12 @@
 
     <div class="container bg">
         
-        <div class="pTopBar generalTopBar" style="padding-bottom: 20px;">
-            <div class="pBackIcon" onclick="location.href='homepage.php'">
-
-            </div>
-
-            <div class="pHeader">
-                <h3>EDIT DETAILS</h3>
-            </div>
-        </div>
+    <?php 
+        $bar_title = "EDIT PROFILE";
+        $back_url  = "profile.php";
+        
+        require_once "components/top_bar.php"
+    ?>
 
     <form action="php/accounts_handler.php" method="post">
         <div class="label availability">

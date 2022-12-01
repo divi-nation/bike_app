@@ -81,7 +81,7 @@
                                 <span class='apatName'>   {$row['business_name']}        </span>
                                 
                                 <span class='category'>   {$row['country']}    </span>
-
+                                </span>
                                 </span>
                                 </a><br>\n";
                               }

@@ -8,8 +8,8 @@ ini_set('display_errors', 1);
 
 
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+   $email = $_POST['email'];
+   $password = $_POST['password'];
 
    $conn = new mysqli("localhost", "root", "", "bike_app");
 
@@ -34,7 +34,7 @@ ini_set('display_errors', 1);
 
    else{
     echo "<script>alert('Something Went wrong please try agein')</script>";
-    header("refresh:1; url=../index.php");
+    header("refresh:1; url=../index.html");
 
    }
    

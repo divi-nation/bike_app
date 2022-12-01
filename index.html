@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike App</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+        // if browser supports a js service worker..
+         if('serviceWorker' in navigator){
+             navigator.serviceWorker.register('sw.js');  
+         }
+     </script>
+
 </head>
 <body>
     <div class="container cen">

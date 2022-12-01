@@ -1,1 +1,25 @@
 1. Count th
+
+
+//logic for slide
+
+what i want to do
+    i want to refresh the slide div 
+    and everytime i do, i want to change 
+    the post it fetches
+
+stakeholders
+    post id variable
+
+
+
+solution on how to do it
+1. put the query and the final echo variables in one div - so
+   once you refresh that div, every thing refreshes
+
+2.create a javascript function that contains a variable that changes 
+   after a set time
+
+3. get the javascript variable and use it as the id in the php tag query
+
+4. refresh the div after a set time

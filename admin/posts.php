@@ -33,7 +33,7 @@
                         <div class = 'menu-btn flex-row' onclick = 'activate("main > .left"); deactivate(".calender");'>
                             <i class = 'bi bi-grid-fill'></i>
                         </div>
-                        <div class = 'panel-name'>Registered Users</div>
+                        <div class = 'panel-name'>ACTIVE POSTS</div>
                     </div>
                     <div class = 'right'>
                         <div class = 'date-btn flex-row' onclick = 'activate(".calender"); deactivate("main > .left");'>
@@ -50,9 +50,9 @@
                 </div>
 
                 <div class="heda">
-                    <span class="off">User</span>
                     <span>Post Title</span>
-                    <span class="off">Price</span>
+                    <span  class="off">Price</span>
+                    <span class="off">Views Left</span>
                 </div>
 
                 <div class="users">
@@ -65,23 +65,30 @@
                     
                     <?php
                         $conn = mysqli_connect("localhost", "root", "", "bike_app"); 
-                        $sql = "SELECT * FROM lease";
+                        $sql = "SELECT * FROM post_test";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0){
                             while ($row = $result-> fetch_assoc()){
-                             //   echo "<tr><td>" . $row["fullname"] . /*"</td><td>" . $row["last_name(manager)"] . */"</td><td>" . $row["apartment_name"] . "</td><td>" . $row["apartment_category"] . "</td></tr>";
-                                echo "\n<br>";
 
-                                echo"<a href='user_details.php?ID={$row['id']}'> 
-                                        
-                                <span class='fullname'>   {$row['fullname']}              </span> 
+
+                                 echo "\n<br>";
+
+                                echo"
+
                                 
-                                <span class='apatName'>   {$row['apartment_name']}        </span>
+                                <a href='post_details.php?ID={$row['id']}'> 
+                                <span class='three-col-grid'>
+
+                                <span class='apatName'>  {$row['post_title']}              </span> 
                                 
-                                <span class='category'>   {$row['apartment_category']}    </span>
+                                <span class='fullname'> {$row['currency']} {$row['post_price']}        </span>
                                 
-                                </a><br>\n";
+                                <span class='category'>   {$row['post_max_views']}    </span>
+                                </span>
+                                </a><br>\n"
+                                
+                                ;
                             }
                         }
 

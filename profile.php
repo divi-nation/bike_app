@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/topbar.css">
 
 
-    $count = $row['biking_count'];
+    <!-- $count = $row['biking_count']; -->
 
     <title>Document</title>
 </head>
@@ -23,15 +23,13 @@
 
     <div class="container bg">
         
-        <div class="pTopBar generalTopBar" style="padding-bottom: 20px;">
-            <div class="pBackIcon" onclick="location.href='homepage.php'">
+    <?php 
+        $bar_title = "MY PROFILE";
+        $back_url  = "account.php";
+        
+        require_once "components/top_bar.php"
+    ?>
 
-            </div>
-
-            <div class="pHeader">
-                <h3>MY PROFILE</h3>
-            </div>
-        </div>
 
 
         <div class="label availability">

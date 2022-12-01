@@ -49,7 +49,7 @@
             //selecting everything from post tes
                 $sql = "SELECT * FROM post_test";
                 $result = mysqli_query($conn, $sql) or die ("Unsuccessful Query");
-                $row = mysqli_fetch_array($result);
+                // $row = mysqli_fetch_array($result);
                 $row_count_s = 1;
                 if ($result->num_rows > 0){
                     while ($row = $result-> fetch_assoc()){
@@ -106,19 +106,8 @@
 
 
 
-    <div class="bottomNavigation">
-            
-            <div class="nIcon" onclick="location.href='messages.html'">
-                <i class="bi bi-chat-dots"></i>
-            </div>
-            <div class="nIcon" onclick="location.href='homepage.php'">
-                <i class="bi bi-house active"></i>
-            </div>
+            <?php require_once "components/bottom_navigation.php"?>
 
-            <div class="nIcon" onclick="location.href='account.php'">
-                <i class="bi bi-person-fill"></i>
-            </div>
-    </div>
 
 
  

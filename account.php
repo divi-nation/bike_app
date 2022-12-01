@@ -20,7 +20,7 @@
 
     <div class="container">
 
-        <div class="popup darkItem">
+        <div class="popup">
             <div class="item darkItem" onclick="location.href='profile.php'"><h4>VIEW PROFILE</h4></div>
  
         </div>
@@ -62,15 +62,15 @@
                     -->
  
                     <div class="totalPosts">
-                        <p id="count"><span>posts</span></p> <p class="p"> posts</p>
+                        <p id="count"><span></span></p> <p class="p"> Active Posts</p>
                     </div>
 
                     <div class="content">
                         <?php
                         //selecting everything posted by current user(posts that are still active) 
-                            $sql = "SELECT * FROM post_test";
+                            $sql = "SELECT * FROM post_test where user_id = $user_id";
                             $result = mysqli_query($conn, $sql) or die ("Unsuccessful Query");
-                            $row = mysqli_fetch_array($result);
+                            // $row = mysqli_fetch_array($result);
                             $row_count_s = 0;
                             $count = 0;
                             if ($result->num_rows > 0){
@@ -79,16 +79,15 @@
                                     
 
 
-                                    if ($row['user_id'] == $user_id){
-                                        $count = $count + 1;
+                                        //  $count = $count + 1;
 
-                                        $sql_2 = "SELECT * FROM post_test where id = $row_count_s";
-                                        $result_2 = mysqli_query($conn, $sql_2) or die ("Unsuccessful Query");
-                                        $row_2 = mysqli_fetch_array($result_2);
+                                        // $sql_2 = "SELECT * FROM post_test where user_id = $user_id";
+                                        // $result_2 = mysqli_query($conn, $sql_2) or die ("Unsuccessful Query");
+                                        // $row_2 = mysqli_fetch_array($result_2);
 
-                                        $item_name = $row_2['post_title'];
-                                        $post_view_left = $row_2['post_max_views'];
-                                        $post_image_1 = $row_2['post_image_1'];
+                                        $item_name = $row['post_title'];
+                                        $post_view_left = $row['post_max_views'];
+                                        $post_image_1 = $row['post_image_1'];
             
 
 
@@ -112,16 +111,16 @@
                                             </div>
                                             </div>'
                                             ;
+                                            $count++;
+
 
                                     }
 
  
-                                    $row_count_s++;
 
                                 
                                 }
-                            }
-
+ 
                         ?>
                     </div>
         
@@ -195,20 +194,8 @@
             </div>
  
     
-            <div class="bottomNavigation">
-          
-                <div class="nIcon" onclick="location.href='messages.html'">
-                    <i class="bi bi-chat-dots"></i>
-                </div>
-                <div class="nIcon" onclick="location.href='homepage.php'">
-                    <i class="bi bi-house active"></i>
-                </div>
-      
-                <div class="nIcon" onclick="location.href='account.html'">
-                    <i class="bi bi-person-fill"></i>
-                </div>
+            <?php require_once "components/bottom_navigation.php"?>
 
-        </div>
         
     </div>       
         

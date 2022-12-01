@@ -17,8 +17,7 @@ function toggle_items(item_name){
 
                 if (1 == 1){
                     const yourFunction = async () => { 
-                        await delay(5000);
-                    };
+                     };
                     yourFunction();    
 
                 }

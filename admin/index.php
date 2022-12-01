@@ -1,4 +1,30 @@
+<?php
+ $conn = mysqli_connect("localhost", "root", "", "bike_app"); 
 
+
+ //count users
+ $query = "select id from users";
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ $total_users = $result->num_rows; 
+ 
+
+ //count posts
+ $query = "select id from post_test";
+ $result = mysqli_query($conn, $query);
+ $row = mysqli_fetch_array($result);
+ $total_posts = $result->num_rows; 
+
+
+//count bars
+$result = mysqli_query($conn, 'SELECT SUM(bars) AS value_sum FROM users'); 
+$row = mysqli_fetch_assoc($result); 
+$total_bars = $row['value_sum'];
+
+ 
+
+ 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +83,7 @@
                             <div class = 'item-left'>
                                 <h3>Bars</h3>
                                 <div>Total User Bars</div>
-                                <b>+3000</b>
+                                <b><?php echo $total_bars?></b>
                             </div>
 
                             <div class = 'item-right flex-center'>
@@ -74,7 +100,7 @@
                             <div class = 'item-left'>
                                 <h3>Users</h3>
                                 <div>Number of Users</div>
-                                <b>3560</b>
+                                <b><?php echo $total_users?></b>
                             </div>
 
                             <div class = 'item-right flex-center'>
@@ -91,7 +117,7 @@
                             <div class = 'item-left'>
                                 <h3>New Users</h3>
                                 <div>Registered Users This Month</div>
-                                <b>3000</b>
+                                <b><?php echo $total_users?></b>
                             </div>
 
                             <div class = 'item-right flex-center'>
@@ -100,14 +126,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End of Summary Card -->
+                        <!-- End of Summar<?php echo $total_users?>y Card -->
                         <!-- Summary Card -->
                         <div class = 'item'>
 
                             <div class = 'item-left'>
-                                <h3>Posts</h3>
+                                <h3>Active Posts</h3>
                                 <div>Total Bike Posts</div>
-                                <b>3560</b>
+                                <b><?php echo $total_posts?></b>
                             </div>
 
                             <div class = 'item-right flex-center'>

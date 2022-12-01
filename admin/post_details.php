@@ -15,7 +15,7 @@ if(isset($_GET['ID'])){
 
 
 
-    $sql = "SELECT * FROM users WHERE id='$ID'";
+    $sql = "SELECT * FROM post_test WHERE id='$ID'";
     $result = mysqli_query($conn, $sql) or die ("Unsuccessful Query");
     $row = mysqli_fetch_array($result);
 
@@ -41,7 +41,7 @@ else{
     <link rel = 'stylesheet' href = 'css/users.css'>
 </head>
 <body>
-    <div class="cover2">
+    <!-- <div class="cover2">
         <form action="../php/update_managers.php?ID=<?php echo $row['id']?>" method="post">
             <div class="userInformation">
                 <div class="userDetails">
@@ -162,13 +162,12 @@ else{
                 </div>
                 <div class="uBtn" onclick="toggle_items('.cover2')">
                     <h6>CANCEL</h6>
-        
-                    </div>
+                     </div>
             </div>
 
         </form>
     
-    </div>
+    </div> -->
 <div class = 'wrapper'>
 
         <main class='full-vhw bg'>
@@ -191,7 +190,7 @@ else{
                         <div class = 'menu-btn flex-row' onclick = 'activate("main > .left"); deactivate(".calender");'>
                             <i class = 'bi bi-grid-fill'></i>
                         </div>
-                        <div class = 'panel-name'>User Details</div>
+                        <div class = 'panel-name'>Post Details</div>
                     </div>
                     <div class = 'right'>
                         <div class = 'date-btn flex-row' onclick = 'activate(".calender"); deactivate("main > .left");'>
@@ -210,11 +209,20 @@ else{
                    <div class="cover">
                         <div class="userInformation">
                             <div class="userDetails">
+                                <?php
+                                $u_id = $row['user_id'];
+                                $b_query  = "select business_name from users where id = '$u_id'";
+                                $b_result = mysqli_query($conn, $b_query);
+                                $b_row = mysqli_fetch_array($b_result);
+
+                                $b_name = $b_row['business_name'];
+
+                                ?>
 
 
                                         <div class="element">
                                             <div class="lable">
-                                                <h4>ID</h4>
+                                                <h4>Post ID</h4>
                                             </div>
                                             <div class="lableInfo">
                                                 <p><?php echo $row['id']?></p>
@@ -224,21 +232,31 @@ else{
 
                                         <div class="element">
                                                 <div class="lable">
-                                                    <h4>Firstname</h4>
+                                                    <h4>Post Title</h4>
                                                 </div>
                                                 <div class="lableInfo">
-                                                    <p><?php echo $row['first_name']?></p>
+                                                    <p><?php echo $row['post_title']?></p>
                                                 </div>
                                         </div>
 
             
                                         <div class="element">
                                             <div class="lable">
-                                                <h4>Lastname</h4>
+                                                <h4>Post Description</h4>
                                             </div>
                                             <div class="lableInfo">
-                                                <p><?php echo $row['last_name']?></p> 
+                                                <p><?php echo $row['post_description']?></p> 
                                             </div>
+                                            <div class="element">
+                                                <div class="lable">
+                                                    <h4>Country</h4>
+                                                </div>
+                                                <div class="lableInfo">
+                                                <p><?php echo $row['country']?></p>
+                                                    
+                                                </div>
+
+                                        </div> 
 
                                         </div>
 
@@ -246,38 +264,13 @@ else{
 
                                         <div class="element">
                                                 <div class="lable">
-                                                    <h4>Date Of Birth</h4>
+                                                    <h4>Post Price</h4>
                                                 </div>
                                                 <div class="lableInfo">
-                                                <p><?php echo $row['date_of_birth']?></p>
+                                                <p><?php echo $row['post_price']?></p>
                                                     
                                                 </div>
                                         </div>
-
-
-                                        <div class="element">
-                                                <div class="lable">
-                                                    <h4>Country</h4>
-                                                </div>
-                                                <div class="lableInfo">
-                                                <p><?php echo $row['email']?></p>
-                                                    
-                                                </div>
-
-                                        </div> 
-
-
-
-                                        <div class="element">
-                                                <div class="lable">
-                                                    <h4>Business Name</h4>
-                                                </div>
-                                                <div class="lableInfo">
-                                                <p><?php echo $row['business_name']?></p>
-                                                    
-                                                </div>
-                                        </div>
-
 
 
                                         <div class="element">
@@ -293,6 +286,31 @@ else{
 
 
 
+                                        <div class="element">
+                                                <div class="lable">
+                                                    <h4>Business Name</h4>
+                                                </div>
+                                                <div class="lableInfo">
+                                                <p><?php echo $b_name?></p>
+                                                    
+                                                </div>
+                                        </div>
+
+
+
+                                        <!-- <div class="element">
+                                                <div class="lable">
+                                                    <h4>Country</h4>
+                                                </div>
+                                                <div class="lableInfo">
+                                                <p><?php echo $row['country']?></p>
+                                                    
+                                                </div>
+
+                                        </div>  -->
+
+
+
  
 
 
@@ -302,7 +320,7 @@ else{
                                                     <h4>Phone</h4>
                                                 </div>
                                                 <div class="lableInfo">
-                                                <p><?php echo $row['phone']?></p>
+                                                <p><?php echo $row['contact']?></p>
                                                     
                                                 </div>
 
@@ -312,10 +330,10 @@ else{
 
                                         <div class="element">
                                                 <div class="lable">
-                                                    <h4>password</h4>
+                                                    <h4>Region</h4>
                                                 </div>
                                                 <div class="lableInfo">
-                                                <p><?php echo $row['password']?></p>
+                                                <p><?php echo $row['region']?></p>
                                                     
                                                 </div>
 
@@ -326,10 +344,10 @@ else{
 
                                         <div class="element">
                                                 <div class="lable">
-                                                    <h4>Bars</h4>
+                                                    <h4>Views Left</h4>
                                                 </div>
                                                 <div class="lableInfo">
-                                                <p><?php echo $row['bars']?></p>
+                                                <p><?php echo $row['post_max_views']?></p>
                                                     
                                                 </div>
 

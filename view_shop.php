@@ -1,6 +1,11 @@
 <?php require_once "php/session.php";
-//new
+//problem 
+//the fisrt product posted by the user is not fetched
 $id = mysqli_real_escape_string($conn, $_GET['id']);
+ $view_query = "select business_name from users where id = '$id'";
+$view_result = mysqli_query($conn, $view_query);
+$view_row = mysqli_fetch_array($view_result);
+
 ?>
 
 
@@ -31,7 +36,7 @@ $id = mysqli_real_escape_string($conn, $_GET['id']);
 
                 <div class="shopName">
                     <!--FEBTCHING CURRE-->
-                    <h6><?php echo $row_c['business_name']; ?></h6>
+                    <h6><?php echo $view_row['business_name']; ?></h6>
 
                 </div>
 
@@ -47,20 +52,19 @@ $id = mysqli_real_escape_string($conn, $_GET['id']);
             //selecting everything from post tes
                 $sql = "SELECT * FROM post_test where user_id = '$id'";
                 $result = mysqli_query($conn, $sql) or die ("Unsuccessful Query");
-                $row = mysqli_fetch_array($result);
+                // $row = mysqli_fetch_array($result);
                 $row_count_s = 1;
+                echo $num_rows;
                 if ($result->num_rows > 0){
+ 
                     while ($row = $result-> fetch_assoc()){
-
+ 
                          
-
-                        // checking is the user id of a post is same as the current post's poster (me saf ano dey barb the english adey rep, you figa ebe joke) ... BUt the code dey job so no yawa
-                        if ($row['user_id'] == $poster_id){
-                        
+ 
                             $item_name = $row['post_title'];
                             $post_price = $row['post_price'];
                             $post_image_1 = $row['post_image_1'];
-   
+    
 
 
 
@@ -85,14 +89,12 @@ $id = mysqli_real_escape_string($conn, $_GET['id']);
                                 ;
 
                         }
-                        echo $row_count_s;
-
+ 
                         $row_count_s++;
 
                     
                     }
-                }
-
+ 
             ?>
 
             
@@ -105,20 +107,7 @@ $id = mysqli_real_escape_string($conn, $_GET['id']);
 
 
 
-    <div class="bottomNavigation">
-            
-            <div class="nIcon" onclick="location.href='messages.html'">
-                <i class="bi bi-chat-dots"></i>
-            </div>
-            <div class="nIcon" onclick="location.href='homepage.php'">
-                <i class="bi bi-house active"></i>
-            </div>
-
-            <div class="nIcon" onclick="location.href='account.php'">
-                <i class="bi bi-person-fill"></i>
-            </div>
-    </div>
-
+            <?php require_once "components/bottom_navigation.php"?>
 
  
 

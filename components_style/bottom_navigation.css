@@ -1,0 +1,29 @@
+
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ .bottomNavigation{
+    height: 75px;
+    width: 100%;
+    background: black;
+    background: linear-gradient( rgb(0, 61, 61), rgb(0, 46, 24));
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+ }
+
+ .nIcon{
+      display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 25px;
+     color: white;
+  }
+
+
+
+ 

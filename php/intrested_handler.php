@@ -2,8 +2,8 @@
 
 
 ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 //intrested user id = current user id
 $int_user_id = $user_id;

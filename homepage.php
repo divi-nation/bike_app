@@ -1,4 +1,7 @@
-<?php require_once "php/session.php"?>
+<?php require_once "php/session.php";
+ 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +14,58 @@
      <!-- JavaScript Bundle with Popper -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
      <link rel="stylesheet" href="css/loader.css">
-
      <link rel="stylesheet" href="css/bottomNavigation.css">
      <link rel="stylesheet" href="css/universalBackgrouund.css">
+     <link rel="manifest" href="pwa_files/manifest.json">
+     <script
+	 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+    </script>    
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> 
+     <script>
+     
+        window.onload = () => {
+            
+
+            
+            element = document.querySelector(".loader");
+            element.classList.add("active");
+
+            element = document.querySelector(".fill");
+            element.classList.add("active");
+
+            // setInterval(function () {
+            //     refresh();
+ 
+             
+            // }, 4000); 
+
+        
+
+        }
+     </script>
+     <script>
+
+        function refresh(){
+            $('#refresh').load(location.href + " #refresh");
+
+            setInterval(function () {
+                $('#refresh').load(location.href + " #refresh");
+
+             
+            }, 4000); 
+        }
+
+
+
+      
+
+    </script>
+    <script>
+       // if browser supports a js service worker..
+        // if('serviceWorker' in navigator){
+            navigator.serviceWorker.register('pwa_files/sw.js');  
+        // }
+    </script>
 
 
 
@@ -23,41 +75,60 @@
  
 
     <div class="container bg">
-
-        
-
+    
  
-        <div class="topBar">
-            <div class="menuButton" onclick="toggle_items('.sidePanel'); toggle_items('.closing')">
-            </div>
-            <div class="businessName darkColor">
-                <h6>BIKE</h6>
-            </div>
-            <div class="barz">
-                <div class="barsContainer">
-                    <div class="barsTexxt">
-                        <h5>BARS :</h5>
-                    </div>
-                     <div class="numberOfBars">
-                        <h6 ><?php echo $row_c['bars']; ?></h6>
-                    </div>
-
-                    
-
-                </div>
-
-
-            </div>
-
-
-         </div>
+  
 
 
         <div class="center">
+            <div class="top">
+                <div class="left" onclick="refresh()">
+                    <div class="logo">
+                        <img src='images/photo_2022-04-21_10-42-19-removebg-preview.png'>
+
+                    </div>
+                    <div class="app">
+                        BIKE
+                    </div>
+                </div>
+
+                <div class="right">
+                    Bars : <?php echo $row_c['bars']; ?>
+                </div>
+
+            </div>
+            <div class="randoms">
+
+                <div id="refresh" class="r_box">
+                    <?php
+                         
+
+                      $random_rambler = "<script>document.write(num);</script>";
+                    //   echo $random_rambler;
+
+ 
+                        $r_query = "select * from post_test order by rand() limit 1";
+                        $r_result = mysqli_query($conn, $r_query);
+                        $r_row = mysqli_fetch_array($r_result);
+
+                        $r_image = $r_row['post_image_1'];
+                        $r_name = $r_row['post_title'];
+                        echo "<script>refresh()</script>";
+                        
+ 
+
+
+                    ?>
+                    <img src='php/images/<?php echo $r_image ?>'>
+                    <div class="r_text">
+                        <?php echo $r_name;?>
+                    </div>
+                </div>
+
+            </div>
 
          
-            <div class="slide"></div>
-          
+           
             <div class="functionalities">
                 <div class="box darkItem" onclick="location.href='bikeThrough.php'";>
                     <div class="icon">
@@ -103,12 +174,12 @@
                 </div>
 
 
-            <div class="loader">
-                <div class="logo"></div>
-                <div class="fill"></div>
+                <div class="loader">
+                    <div class="logo"></div>
+                    <div class="fill"></div>
 
+                </div>
             </div>
-        </div>
               
             </div>
         </div>
@@ -116,47 +187,34 @@
 
         </div>
 
-        <div class="bottomNavigation">
-          
-            <div class="nIcon" onclick="location.href='messages.php'">
-                <i class="bi bi-chat-dots"></i>
-            </div>
-            <div class="nIcon" onclick="location.href='homepage.php'">
-                <i class="bi bi-house "></i>
-            </div>
-  
-            <div class="nIcon" onclick="location.href='account.php'">
-                <i class="bi bi-person-fill"></i>
-            </div>
+        <?php require_once "components/bottom_navigation.php"?>
 
-         
-        
-        </div>
+       
 
     </div>
 
 
     <script>
-        let number = document.getElementById("number");
-        let counter = 0;
+        // let number = document.getElementById("number");
+        // let counter = 0;
 
-        setInterval(() => {
-            if(counter == 65){
-                clearInterval();
-            }
-            else{
+        // setInterval(() => {
+        //     if(counter == 65){
+        //         clearInterval();
+        //     }
+        //     else{
 
-            counter += 1;
-            number.innerHTML = counter ;
+        //     counter += 1;
+        //     number.innerHTML = counter ;
                 
-            }
-        }, 30);  
+        //     }
+        // }, 30);  
 
         function toggle_items(item_name){
             element = document.querySelector(item_name);
             element.classList.toggle("active")
         }
-
+ 
         function addActive(item_name){
             element = document.querySelector(item_name);
             element.classList.add("addActive")
@@ -165,17 +223,13 @@
 
              
 
-        window.onload = () => {
-            
-            element = document.querySelector(".loader");
-            element.classList.add("active");
+      
 
-            element = document.querySelector(".fill");
-            element.classList.add("active");
+         
 
+         var num = 5;
 
-        }
-
+ 
 
 
 

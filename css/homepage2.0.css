@@ -41,11 +41,7 @@
     color: white;
 }
 
-
-.logo{    background: lime;
-
-    transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-}
+ 
 
 .fill.active{
     width: 65px;
@@ -119,48 +115,10 @@
     display: none;
 }
 
-.search.active{
-    display: block;
-    position: fixed;
-    height: calc(100vh - 75px);
-    top: 0;
-    left: 0;
-    width: 100vw;
-     z-index: 100;
-    overflow: hidden;
-    background: rgb(255, 255, 255);
-     
-}
-.search_container{
-    position: relative;
-    width: 100%;
-    height: 150px;
-    background: url('../images/airpod-iphone-nespresso-gadget.jpg');
-    background-size: cover;
-     border-bottom-left-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-form{
-    width: 80%;
-    height: 50px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 30px;
-    box-shadow: 0 0 5px 1px grey;
-   
- }
+ 
+ 
 
- form .self{
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    padding-left: 20px;
-    outline: none;
-    border: none;
- }
+ f 
  .submit{
     position: absolute;
     width: 30%;
@@ -215,220 +173,106 @@ form{
     width: 100%;
      background: linear-gradient(45deg, cyan, rgb(27, 253, 65), rgb(0, 133, 133)) ;
 } 
-
-body{
-    background: rgb(5, 24, 5);
-}
-.topBar{
-     width: 95%;
-    height: 70px;
-    margin-left: 2.5%;
-     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
- }
-
-.menuButton{
-   position: relative;
- }
-
- .button{
-     height: 65px;
-     width: 65px;
-      border-radius: 50%;
-     background: rgba(0, 92, 87, 0.274);
-      overflow: hidden;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     position: relative;
- }
+ 
  
 
 
- .businessName{
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     color: lime;
-     font-size: 20px;
- }
 
- .profileIcon .button{
-    background-size: cover;
-    background-position: center;
+
+
+
+ /*Randoms*/
+
+ .r_box{
+     width: 500px;
+    height: 250px;
+    position: relative;
     overflow: hidden;
-    background-repeat: no-repeat;
+   
+ }
+ .r_box img{
+    width: 100%;
+   }
+ .r_text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgb(255, 255, 255);
+    background: rgba(9, 30, 2, 0.619);
+    padding: 9px;
+ }
 
-    z-index: 33;
- 
-
-     
-}
 
 
 
 
- /*Recent posts*/
+
+
+
+
+
+
 
  .center{
      width: 100%;
-     height: calc(100vh - 165px);
+     height: calc(100vh - 60px);
       display: grid;
-     grid-template-rows: 5fr 4fr;
+     grid-template-rows: 1fr 3fr 4fr;
+      overflow-y: auto;
  }
-
-
- .barz{
+ .top{
      display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ .randoms{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+ }
+ .left{
+     width: 55vw;
+    display: flex;
      align-items: center;
-     justify-content: center; 
-     color: rgb(255, 255, 255);
-     border: 1px solid;
-      
- }
+    justify-content: space-between;
+    padding: 10px;
+  }
 
- 
-
- .actualBars{
-      display: flex;
-      justify-content: center;
-      position: relative;
-      margin-left: -50px;
- }
- .horbar{
-     height: 55%;
-     width: 10px;
-     background: linear-gradient(#00e903, green);
-      position: absolute;
-     bottom: 0;
-
- }
-
- .actualBars .middle{
-     height: 30%;
-     margin-left: 30px;
- }
-
- .actualBars .short{
-    height: 15%;
-    margin-left: 60px;
+ .app{
+    font-size: 17px;
+    font-weight: 900;
+    color: rgba(42, 67, 35, 0);
     
+ }
 
+ .left .logo{
+    height: 60px;
+    width: 60px;
+ }
+
+ .left .logo img{
+    height: 100%;
+    width: 100%;
+ }
+.right{
+    padding-right: 20px;
 }
- .numberOfBars{
-      display: flex;
-     align-items: center;
-     justify-content: center;
-     font-size: 50px;
 
- }
 
- .numberOfBars h6{
-     font-weight: 400;
-     font-size: 20px;
-     color: black;
 
- }
- .barsTexxt h5{
-     display: flex;
-      justify-content: center;
-      color: #00372e;
-      font-weight: 800;
-      font-size: 15px;
-  }
-
- .barsContainer{
-     width: 160px;
-     height: 200px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-   }
- .recentPost, .bikeInfo{
-      display: flex;
-     align-items: center;
-     justify-content: center;
-     overflow-x: auto;
-     width: auto;
-     position: relative;
- }
-
- .post{
-     width: 90%;
-     height: 90%;
-     overflow: hidden;
-     margin-left: 4px;
-     position: absolute;
-     border-radius: 30px;
-     background: url('../images/pexels-ron-lach-9785004.jpg');
-     background-size: cover;
-     background-position: center;
-     box-shadow: 0 0 10px 2px black;
- }
-
- .pTwo{
-     margin-left: 200vw;
-  }
-
- .pThree{
-     margin-left: 400vw;
-     margin-right: 30px;
- }
-
- .space{
-     margin-left: 490vw;
-     width: 0px;
-     height: 34px;
-     border: 1px solid green;
- }
-
+   
  
-
-
-
- .bikeInfo .info{
-     width: 95%;
-     height: 97%;
-      border-radius: 20px;
-     box-shadow: 4px 0px 2px 1px rgba(0, 255, 0, 0.753);
-     background: linear-gradient(300deg, lime, rgba(0, 92, 87, 0.274), lime);
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     
- }
-
- .edge{
-     height: 160px;
-     width: 160px;
-      position: relative;
- }
-
- 
- 
-
- .bars{
-      display: grid;
-     grid-template-rows: 4fr 2fr;
-     color: white;
-  }
-
-  .bars h3{
-      font-size: 50px;
-      float: right;
-  }
   
+ 
+ 
 
-  .barsText{
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      font-size: 25px;
-      color: white;
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.11);
-  }
+ 
+ 
 
+ 
+ 
+ 
  .functionalities{
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
@@ -444,7 +288,7 @@ body{
      border-radius: 20px;
      display: grid;
      grid-template-rows: 1fr 1fr;
-     color: white;
+     color: rgb(252, 1, 1);
      background: linear-gradient( rgb(0, 255, 0),rgba(0, 92, 87, 0.274));
       cursor: pointer;
  }
@@ -533,4 +377,16 @@ body{
      
  }
 
+ @media (max-width: 600px){
 
+    .r_box{
+         width: 90%;
+        height: 90%;
+        position: relative;
+        overflow: hidden;
+        margin-left: 5%;
+      }
+
+}
+  
+ 

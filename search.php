@@ -5,7 +5,7 @@ if(isset($_POST['search'])){
     $business_name = $_POST['business_name'];
     $business_name = substr($business_name, 0, 3);
 
-    $query = "select id, business_name, country from users where business_name like '%$business_name%'";
+    $query = "select id, business_name, country from users where business_name like '%$business_name%' limit 10";
     $result = $conn->query($query);
 
 
@@ -85,6 +85,8 @@ if(isset($_POST['search'])){
 
 
     </div>
+    <?php require_once "components/bottom_navigation.php"?>
+
 
  
 

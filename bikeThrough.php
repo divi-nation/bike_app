@@ -79,7 +79,8 @@
 
                 <div class="descriptionPopUp">
                     
-                    <P><?php echo $post_row['post_description'];?> 
+                    <P><?php echo $post_row['post_description'];?>echo $ID;
+ 
                     
                     <br>
                     <br>
@@ -92,7 +93,7 @@
                     <h5>Posted By: <?php echo $row_p['business_name']; ?></h5>
                     <h5>Available in: <?php echo $post_row['region']; ?></h5>
                     <h5>For more information, contact: <?php echo $post_row['contact']; ?></h5>
-                    <span>
+                    <span onclick="location.href='php/chat_router.php'">
                         <h6>CHAT</h6>
                     </span>
                  </div>
@@ -103,7 +104,7 @@
         </div>
         <div class="descriptionDeactivate" onclick="toggle_items('.descriptionPopUp'); toggle_items('.descriptionDeactivate')"></div>
 
-        <div class="bottomNavigation">
+        <!-- <div class="bottomNavigation">
           
             <div class="nIcon" onclick="location.href='messages.html'">
                 <i class="bi bi-chat-dots"></i>
@@ -115,7 +116,8 @@
             <div class="nIcon" onclick="location.href='account.php'">
                 <i class="bi bi-person-fill"></i>
             </div>
-        </div>
+        </div> -->
+        <?php require_once "components/bottom_navigation.php"?>
 
     <?php
     function next_item(){

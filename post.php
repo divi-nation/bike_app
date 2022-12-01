@@ -12,15 +12,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 <body>
+<?php 
+        $bar_title = "POST";
+        $back_url  = "homepage.php";
+        
+        require_once "components/top_bar.php"
+    ?>
     <div class="container cen">
         
              <form class="" action="php/post_handler.php" method="post" enctype = "multipart/form-data">
                 <div class="logo cen" onclick="location.href='homepage.php'">
                     <i class="bi bi-arrow-left-short"></i>
                 </div>
-                <div class="head cen">
-                    POST
-                </div>
+               
                 <div class="form_item">
                     <label>Product Name</label>
                     <input type="text" placeholder="type.." name="post_title" required>

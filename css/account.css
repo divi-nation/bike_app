@@ -65,6 +65,7 @@
     width: 100%;
     transition: .3s ease;
     transition-delay: .1s;
+    background: white;
 
 
   }
@@ -74,8 +75,7 @@
      z-index: 55;
     bottom: 0;
     position: absolute;
-    box-shadow: 0 0 5px 2px black;
-    display: flex;
+     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;

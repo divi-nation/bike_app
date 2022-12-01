@@ -1,114 +1,62 @@
- 
- .search{
-     margin-left: 15px;
-     margin-top: -10px;
-     cursor: pointer;
-
-  }
-  body{
-      width: 100vw;
-      overflow-x: hidden;
-  }
- .search h6{
-     font-size: 18px;
-      font-weight: 200;
-     color: rgb(255, 255, 255);
-     background: linear-gradient(90deg,rgba(0, 0, 0, 0.205), transparent);
-     width: 50%;
-     padding: 3px;
-     padding-left: 16px;
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
  }
 
-
- .searchInput{
-    height: 0px;
-    display: flex;
-   align-items: center;
+.container{
+   height: 100vh;
+   width: 100vw;
    overflow: hidden;
-   transition: .3s ease;
-   cursor: pointer;
 }
 
+.top_bar{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(124deg,green, black, lime);
+   color: white;
+   height: 40px;
+   position: fixed;
+   left: 0;
+   top: 0;
+}
 
- .searchInput.active{
-     height: 60px;
-     box-shadow: 4px 0px 3px 3px rgba(10, 83, 0, 0.205);
-     background: rgb(255, 255, 255);
-     display: flex;
-     align-items: center;
-     overflow: hidden;
- }
+.chats{
+   width: 100%;
+   border: 1px solid black;
+   height: calc(100vh - 40px);
+   margin-top: 40px;
+   overflow-y: auto;
+}
 
- .searchInput input{
-     outline: none;
-     margin-left: 10px;
-     border: none;
- }
-
- .content{
-    border: 1px solid red;
-    height: calc(100% - 150px);
-    width: 100%;
-    overflow-y: auto;
- }
 .chat{
-     height: 80px;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 2fr 7fr;
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.712);
+   height: 60px;
+   width: 100%;
+   display: flex;
+   padding: 5px;
+    margin-top: 20px;
+     border-bottom: 1px solid rgba(231, 231, 231, 0.289);
+   
 }
 
-.item_image{
-    height: 65px;
-    width: 65px;
-    margin-top: 5px;
-    border-radius: 50%;
-    overflow: hidden;
+.pic{
+   height: 50px;
+   width: 50px;
+   border: 1px solid;
+   border-radius: 50%;
+   margin-right: 30px;
 }
 
-.item_image img{
-    height: 100%;
-    width: 100%;
+.chat h5{
+   font-size: 16px;
+   font-weight: 400;
 }
-.right{
-     font-size: 20px;
-    height: 100%;
- }
- .right h5{
-    margin: 5px;
-    margin-left: 15px;
 
-    font-weight: 400;
- }
-
- .right p{
-    font-size: 14px;
-    font-weight: 300;
-    margin: 5px;
-    margin-left: 15px;
- }
-
- .details{
-    position: absolute;
-    width: 100%;
-    height: 0px;
-    background: rgba(0, 0, 0, 0.548);
-    bottom: 0;
-    transition: .5s ease;
- }
-
- .chat.active .details{
-    height: 150px;
-
-
- }
-
- 
- .message i{
-    margin-right: 7px;
-  }
+.chat h6{
+   font-weight: 300;
+   font-size: 13px;
+   margin-top: 10px;
+}
